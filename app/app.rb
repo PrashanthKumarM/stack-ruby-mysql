@@ -21,7 +21,7 @@ class App < Sinatra::Base
         end
 
         set :dbname, 'test'
-        #$db = Mysql.connect(settings.host, settings.login, settings.password, settings.dbname, settings.port)
+        $db = Mysql.connect(settings.host, settings.login, settings.password, settings.dbname, settings.port)
     end
 
     get '/' do
