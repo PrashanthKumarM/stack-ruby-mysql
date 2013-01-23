@@ -17,9 +17,9 @@ begin
     db = Mysql.connect(host, login, password, nil, port)
     db.query("CREATE DATABASE IF NOT EXISTS #{dbname}")
 rescue => e
-    sleep(1)
+    sleep(2)
     tries += 1
-    retry if tries < 30
+    retry if tries < 120
 ensure
     db.close if db
     print "\n"
